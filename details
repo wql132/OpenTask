@@ -1,0 +1,27 @@
+// ==UserScript==
+// @name         奥鹏作业
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       Wql
+// @match        http://www.cupde.cn/learning//entity/function/homework/homeworkPaperList_showAnswer.action?homeworkInfo.id=*
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=cupde.cn
+// @grant        none
+// ==/UserScript==
+
+(function() {
+$(window).bind("load", function () {
+    var arr = $('span[style="width:480px"]');
+    for(var i in arr){
+        if(i%5==0){
+            console.log("---------分割线----------")
+        }
+        var h = arr[i].innerHTML;
+        var answer = h.substr(h.indexOf("正确答案")+18,5);
+        console.log("第"+(i*1+1)+"题 正确答案:    "+answer.replace("&","").replace("n","").replace("b","").replace("s","").replace("p",""));
+    }
+})
+
+
+    // Your code here...
+})();
