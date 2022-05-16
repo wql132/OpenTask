@@ -23,5 +23,5 @@ $(window).bind("load", function () {
 })
 
 
-    // Your code here...
+    // Your code here... 点击作业查看 f12 console
 })();
